@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './RegisterForm.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +11,7 @@ const RegisterForm = () => {
     Checkbox: false,
   });
   const [error, setError] = useState(false);
-
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -27,6 +28,7 @@ const RegisterForm = () => {
       setError(true);
     } else {
       localStorage.setItem('UserData', JSON.stringify(formData));
+      navigate('/category');
     }
   };
   return (
