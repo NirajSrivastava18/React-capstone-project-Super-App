@@ -1,0 +1,79 @@
+.PInfo {
+  width: 700px;
+  height: 406px;
+  background-color: #5746ea;
+  border-radius: 33px;
+  display: flex;
+}
+.PInfoImg {
+  padding: 20px;
+}
+
+.PInfodetails {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.PName {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 36.947px;
+  margin-bottom: 0px;
+  line-height: 103.188%; /* 38.124px */
+  letter-spacing: 0.739px;
+}
+.PEmail {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 36.947px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  line-height: 103.688%; /* 38.309px */
+  letter-spacing: 0.739px;
+}
+
+.PUser {
+  margin-top: 30px;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 72.134px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 66.188%; /* 47.744px */
+  letter-spacing: 1.443px;
+  margin-bottom: 40px;
+}
+
+.categoryContainer {
+  height: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+  margin: auto;
+  margin-top: 0;
+  margin-left: -15px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.categoryTags {
+  height: 42px;
+  width: 163px;
+  padding-right: 120px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 31px;
+  background: #9f94ff;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 28.15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 105.688%; /* 29.751px */
+  letter-spacing: 0.563px;
+  padding: 8px;
+  padding-left: 15px;
+}
