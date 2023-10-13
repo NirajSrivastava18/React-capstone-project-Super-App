@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PImg from '../../assets/PImg.png';
 import styles from './PInfo.module.css';
 
@@ -8,7 +8,10 @@ const PInfo = () => {
 
   const Tags = ({ category }) => {
     return (
-      <div className={styles.categoryContainer}>
+      <div
+        className={styles.categoryContainer}
+        style={{ overflowY: `${category.length > 4 ? 'scroll' : 'hidden'}` }}
+      >
         {category.map((genre, index) => (
           <div key={index} className={styles.categoryTags}>
             {genre}

@@ -10,6 +10,7 @@ import music from '../../assets/Music.png';
 import fiction from '../../assets/Fiction.png';
 import warning from '../../assets/warning.png';
 import Tags from '../../components/Tags/Tags';
+import { useNavigate } from 'react-router-dom';
 
 import styles from './Category.module.css';
 
@@ -72,6 +73,7 @@ const Categories = () => {
   ];
   const [category, setCategory] = useState([]);
   const [error, setError] = useState(false);
+  const navigate = useNavigate();
   const handleButton = () => {
     if (category.length < 3) {
       setError(true);
@@ -79,6 +81,7 @@ const Categories = () => {
     } else {
       setError(false);
       localStorage.setItem('category', JSON.stringify([...category]));
+      navigate('/dashboard');
       console.log(category);
     }
   };
