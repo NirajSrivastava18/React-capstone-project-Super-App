@@ -9,7 +9,6 @@ import fantasy from '../../assets/Fantasy.png';
 import music from '../../assets/Music.png';
 import fiction from '../../assets/Fiction.png';
 import warning from '../../assets/warning.png';
-import Tags from '../../components/Tags/Tags';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './Category.module.css';
@@ -120,13 +119,34 @@ const Categories = () => {
       </div>
     );
   };
+  const handleRemove = (defaultCategoryName) => {
+    const remove = category.filter(
+      (cardData) => cardData !== defaultCategoryName
+    );
+
+    setCategory([...remove]);
+  };
 
   return (
     <div className={styles.container}>
       <div className={styles.SelectedGenre}>
         <h4 className={styles.logo}>Super app</h4>
         <p className={styles.description}>Choose your entertainment category</p>
-        <Tags category={category} setCategory={setCategory} />
+        {/* <Tags category={category} setCategory={setCategory} /> */}
+        <div className={styles.tags}>
+          {category.map((defaultCategoryName) => (
+            <div key={defaultCategoryName} className={styles.addTags}>
+              {defaultCategoryName}
+              <span
+                className={styles.remove}
+                onClick={() => handleRemove(defaultCategoryName)}
+              >
+                X
+              </span>
+            </div>
+          ))}
+        </div>
+
         {error && category.length < 3 ? (
           <p className={styles.error}>
             <img src={warning} alt="warning"></img> Minimum 3 category required

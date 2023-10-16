@@ -17,13 +17,9 @@
   width: 400px;
   margin-bottom: 20px;
 }
-.movieTitles img {
-  width: 320px;
-  height: 140px;
-}
 
 .MovieImg {
-  border-radius: 9px;
+  border-radius: 19px;
   object-fit: cover;
   background-repeat: no-repeat;
 }
