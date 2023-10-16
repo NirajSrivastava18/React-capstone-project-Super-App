@@ -1,6 +1,26 @@
 .NewsContainer {
   width: 363px;
   height: 302px;
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #a6e059;
+    border-radius: 20px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #4bb1a6;
+    border-radius: 20px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 .NewsDescription {
@@ -17,7 +37,11 @@
   font-style: normal;
   font-weight: 400;
   line-height: 161.688%;
+  overflow: hidden;
+  overflow-y: auto;
+  /* width */
 }
+
 .NewsTitle {
   background-color: rgba(0, 0, 0, 0.74);
   opacity: 1;

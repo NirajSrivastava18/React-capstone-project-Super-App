@@ -4,7 +4,7 @@ import styles from './News.module.css';
 const News = () => {
   const [getNews, setGetNews] = useState('');
   const [date, setDate] = useState('');
-  const [random] = useState(Math.ceil(Math.random() * 12));
+  const [random] = useState(Math.ceil(Math.random() * 10));
   const options = {
     hour: 'numeric',
     minute: 'numeric',
@@ -15,13 +15,15 @@ const News = () => {
   useEffect(() => {
     const getNewsfetch = async () => {
       await fetch(
-        'https://newsapi.org/v2/top-headlines?country=in&apiKey=970bd3fe7ddd4bc09bacad18661eba0e&q=India'
+        'https://newsdata.io/api/1/news?apikey=pub_31277b6f72c6fa355598f9ad10565fe208a70&q=pizza'
       )
         .then(async (data) => await data.json())
-        .then((res) => setGetNews(res.articles[random]));
+        .then((res) => setGetNews(res.results[random]));
+      // console.log(getNewsfetch);
     };
     getNewsfetch();
-  }, [random]);
+  }, []);
+
   useEffect(() => {
     const today = new Date();
     const dd = today.getDate();
@@ -36,13 +38,13 @@ const News = () => {
       <div
         className={styles.NewsImg}
         alt="NewsImg"
-        style={{ backgroundImage: `url(${getNews.urlToImage})` }}
+        style={{ backgroundImage: `url(${getNews.image_url})` }}
       >
         <div className={styles.NewsTitle}>
           {getNews.title}
           <div className={styles.NewsTime}>
             <span>{date} |</span>
-            {new Date(getNews.publishedAt).toLocaleTimeString('en-us', options)}
+            {new Date(getNews.pubDate).toLocaleTimeString('en-us', options)}
           </div>
         </div>
       </div>
